@@ -72,7 +72,6 @@ while(True):
         sum_time = 0
         sec_time = time.time_ns()
 
-    text = str(int(1e9/tot_time_per_frame))
     cv2.putText(frame,text,(17,37),cv2.FONT_HERSHEY_PLAIN,2,(0,0,0),2,cv2.LINE_AA)
     cv2.putText(frame,text,(15,35),cv2.FONT_HERSHEY_PLAIN,2,(0,255,255),2,cv2.LINE_AA)
 
