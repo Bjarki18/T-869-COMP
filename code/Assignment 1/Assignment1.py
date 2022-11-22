@@ -18,6 +18,7 @@ while(True):
     # (minVal, maxVal, minLoc, maxLoc) = cv2.minMaxLoc(gray)
     # cv2.circle(frame, maxLoc, 1, (255, 0, 0), 2)
 
+
     ## reddest point - CV
     # image = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
     # lower = np.array([155,25,0])
@@ -25,6 +26,7 @@ while(True):
     # mask = cv2.inRange(image, lower, upper)
     # (minVal, maxVal, minLoc, maxLoc) = cv2.minMaxLoc(image[:,:,1], mask=mask)
     # cv2.circle(frame, maxLoc, 1, (255, 0, 0), 2)
+
 
     ## brightest point - double for
     # gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
@@ -36,19 +38,9 @@ while(True):
     #             loc = (j,i)
     # cv2.circle(frame, loc, 1, (255, 0, 0), 2)
 
+
     ## reddest red - double for
     # image = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
-    # max_val = [0,100,100]
-    # for i in range(len(image)):
-    #     for j in range(len(image[1])):
-    #         # print(temp_val[0],temp_val[1],temp_val[2])
-    #         if (image[i][j][1] >= max_val[1] & image[i][j][2] >= max_val[2] & (image[i][j][0] <= 10)):
-    #             max_val = image[i][j]
-    #             loc = (j,i)
-    # print(max_val,loc)
-    # cv2.circle(frame, loc, 1, (255, 0, 0), 2)
-    
-    
     # loc = (0, 0)
     # max_val = [0,0,100]
     # (x,y,z) = (image.shape)
