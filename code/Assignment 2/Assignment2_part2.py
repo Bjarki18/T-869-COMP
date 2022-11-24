@@ -1,6 +1,7 @@
 import cv2
 import numpy as np
 from collections import defaultdict
+import time
 
 # code segments from https://stackoverflow.com/questions/46565975/find-intersection-point-of-two-lines-drawn-using-houghlines-opencv
 def segment_by_angle_kmeans(lines, k=2, **kwargs):
@@ -68,6 +69,7 @@ def segmented_intersections(lines):
 cap = cv2.VideoCapture(1)
 
 while True:
+    start_time = time.time_ns()
     intersections = []
     ret, frame = cap.read()
     # frame = cv2.flip(frame,1)
@@ -115,7 +117,10 @@ while True:
             im_out = cv2.warpPerspective(frame, h, (640,480))
             cv2.imshow("out_img",im_out)
 
+    end_time = time.time_ns()
+    tot_time_per_frame = end_time - start_time
 
+    print(tot_time_per_frame/1e9)
     cv2.imshow('frame',frame)
     cv2.imshow('edges',edges)
     if cv2.waitKey(1) & 0xFF == ord('q'):

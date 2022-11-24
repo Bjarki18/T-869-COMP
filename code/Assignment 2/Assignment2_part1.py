@@ -1,9 +1,11 @@
 import cv2
 import numpy as np
+import time
 
 cap = cv2.VideoCapture(2)
 
 while True:
+    start_time = time.time_ns()
     ret, frame = cap.read()
     frame = cv2.flip(frame,1)
     frame = frame[100:480, 0:640]
@@ -91,6 +93,10 @@ while True:
 
     # cv2.putText(frame,text,(17,37),cv2.FONT_HERSHEY_PLAIN,2,(0,0,0),2,cv2.LINE_AA)
     # cv2.putText(frame,text,(15,35),cv2.FONT_HERSHEY_PLAIN,2,(0,255,255),2,cv2.LINE_AA)
+    end_time = time.time_ns()
+    tot_time_per_frame = end_time - start_time
+
+    print(tot_time_per_frame/1e9)
 
     cv2.imshow('frame',frame)
     # cv2.imshow('edges',edges)
