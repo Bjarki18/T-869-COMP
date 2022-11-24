@@ -3,7 +3,7 @@ import time
 import numpy as np
 
 
-cap = cv2.VideoCapture(1)
+cap = cv2.VideoCapture(2)
 sum_time = 0
 sec_time = time.time_ns()
 text = ""
@@ -70,5 +70,6 @@ while(True):
     cv2.imshow('frame',frame)
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
+
 cap.release()
 cv2.destroyAllWindows()
